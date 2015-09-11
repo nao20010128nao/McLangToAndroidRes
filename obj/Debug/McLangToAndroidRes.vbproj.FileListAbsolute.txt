@@ -1,0 +1,2 @@
+C:\Users\nao\AppData\Local\Temporary Projects\McLangToAndroidRes\bin\Debug\McLangToAndroidRes.exe.config
+C:\Users\nao\Documents\Visual Studio 2015\Projects\McLangToAndroidRes\McLangToAndroidRes\bin\Debug\McLangToAndroidRes.exe.config
