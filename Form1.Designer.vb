@@ -20,7 +20,7 @@ Partial Class Form1
     'メモ: 以下のプロシージャは Windows フォーム デザイナーで必要です。
     'Windows フォーム デザイナーを使用して変更できます。  
     'コード エディターを使って変更しないでください。
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.LangFile = New System.Windows.Forms.TextBox()
