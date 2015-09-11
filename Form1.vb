@@ -56,17 +56,17 @@ Public Class Form1
     End Sub
 
     Private Sub LangSelector_FileOk(sender As Object, e As System.ComponentModel.CancelEventArgs) Handles LangSelector.FileOk
-        LangSelect.Text = LangSelector.FileName
+        LangFile.Text = LangSelector.FileName
     End Sub
 
     Private Sub ResXmlSelector_FileOk(sender As Object, e As System.ComponentModel.CancelEventArgs) Handles ResXmlSelector.FileOk
-        ResXmlSelect.Text = ResXmlSelector.FileName
+        ResXmlFile.Text = ResXmlSelector.FileName
     End Sub
 
     Private Sub DataProcessor_DoWork(sender As Object, e As System.ComponentModel.DoWorkEventArgs) Handles DataProcessor.DoWork
         Dim direct As Boolean = Invoke(Function() ConvertDirect.Checked)
-        Dim loadFrom As String = Invoke(Function() LangSelect.Text)
-        Dim saveTo As String = Invoke(Function() ResXmlSelect.Text)
+        Dim loadFrom As String = Invoke(Function() LangFile.Text)
+        Dim saveTo As String = Invoke(Function() ResXmlFile.Text)
         Dim xml = XDocument.Parse(<resources></resources>)
         Using lang As New StreamReader(LangSelect.Text)
             While Not lang.EndOfStream
@@ -100,5 +100,9 @@ Public Class Form1
             Next
         End If
         xml.Save(saveTo)
+    End Sub
+
+    Private Sub Start_Click(sender As Object, e As EventArgs) Handles Start.Click
+        DataProcessor.RunWorkerAsync()
     End Sub
 End Class
