@@ -25,8 +25,8 @@ Partial Class Form1
         Me.Label1 = New System.Windows.Forms.Label()
         Me.LangFile = New System.Windows.Forms.TextBox()
         Me.LangSelect = New System.Windows.Forms.Button()
-        Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
-        Me.SaveFileDialog1 = New System.Windows.Forms.SaveFileDialog()
+        Me.LangSelector = New System.Windows.Forms.OpenFileDialog()
+        Me.ResXmlSelector = New System.Windows.Forms.SaveFileDialog()
         Me.BackgroundWorker1 = New System.ComponentModel.BackgroundWorker()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.ResXmlSelect = New System.Windows.Forms.Button()
@@ -63,9 +63,13 @@ Partial Class Form1
         Me.LangSelect.Text = "選択"
         Me.LangSelect.UseVisualStyleBackColor = True
         '
-        'OpenFileDialog1
+        'LangSelector
         '
-        Me.OpenFileDialog1.FileName = "OpenFileDialog1"
+        Me.LangSelector.Filter = "MC langファイル|*.lang"
+        '
+        'ResXmlSelector
+        '
+        Me.ResXmlSelector.Filter = "XMLファイル|*.xml"
         '
         'GroupBox1
         '
@@ -147,6 +151,9 @@ Partial Class Form1
         Me.Controls.Add(Me.LangSelect)
         Me.Controls.Add(Me.LangFile)
         Me.Controls.Add(Me.Label1)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
+        Me.MaximizeBox = False
+        Me.MinimizeBox = False
         Me.Name = "Form1"
         Me.Text = "変換"
         Me.GroupBox1.ResumeLayout(False)
@@ -159,8 +166,8 @@ Partial Class Form1
     Friend WithEvents Label1 As Label
     Friend WithEvents LangFile As TextBox
     Friend WithEvents LangSelect As Button
-    Friend WithEvents OpenFileDialog1 As OpenFileDialog
-    Friend WithEvents SaveFileDialog1 As SaveFileDialog
+    Friend WithEvents LangSelector As OpenFileDialog
+    Friend WithEvents ResXmlSelector As SaveFileDialog
     Friend WithEvents BackgroundWorker1 As System.ComponentModel.BackgroundWorker
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents ResXmlSelect As Button
