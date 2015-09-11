@@ -32,10 +32,9 @@ Partial Class Form1
         Me.ResXmlSelect = New System.Windows.Forms.Button()
         Me.ResXmlFile = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.OpenFileDialog2 = New System.Windows.Forms.OpenFileDialog()
-        Me.SaveFileDialog2 = New System.Windows.Forms.SaveFileDialog()
         Me.ConvertDirect = New System.Windows.Forms.RadioButton()
         Me.Convert4MCPESC = New System.Windows.Forms.RadioButton()
+        Me.Start = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -74,14 +73,14 @@ Partial Class Form1
         Me.GroupBox1.Controls.Add(Me.ConvertDirect)
         Me.GroupBox1.Location = New System.Drawing.Point(13, 33)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(259, 100)
+        Me.GroupBox1.Size = New System.Drawing.Size(259, 65)
         Me.GroupBox1.TabIndex = 3
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "モード"
         '
         'ResXmlSelect
         '
-        Me.ResXmlSelect.Location = New System.Drawing.Point(239, 137)
+        Me.ResXmlSelect.Location = New System.Drawing.Point(239, 102)
         Me.ResXmlSelect.Name = "ResXmlSelect"
         Me.ResXmlSelect.Size = New System.Drawing.Size(43, 23)
         Me.ResXmlSelect.TabIndex = 6
@@ -90,7 +89,7 @@ Partial Class Form1
         '
         'ResXmlFile
         '
-        Me.ResXmlFile.Location = New System.Drawing.Point(49, 139)
+        Me.ResXmlFile.Location = New System.Drawing.Point(49, 104)
         Me.ResXmlFile.Name = "ResXmlFile"
         Me.ResXmlFile.Size = New System.Drawing.Size(184, 19)
         Me.ResXmlFile.TabIndex = 5
@@ -98,15 +97,11 @@ Partial Class Form1
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(12, 142)
+        Me.Label2.Location = New System.Drawing.Point(12, 107)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(29, 12)
         Me.Label2.TabIndex = 4
         Me.Label2.Text = "XML:"
-        '
-        'OpenFileDialog2
-        '
-        Me.OpenFileDialog2.FileName = "OpenFileDialog1"
         '
         'ConvertDirect
         '
@@ -130,11 +125,21 @@ Partial Class Form1
         Me.Convert4MCPESC.Text = "MCPE Skin Changer"
         Me.Convert4MCPESC.UseVisualStyleBackColor = True
         '
+        'Start
+        '
+        Me.Start.Location = New System.Drawing.Point(12, 129)
+        Me.Start.Name = "Start"
+        Me.Start.Size = New System.Drawing.Size(75, 23)
+        Me.Start.TabIndex = 7
+        Me.Start.Text = "開始"
+        Me.Start.UseVisualStyleBackColor = True
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(284, 166)
+        Me.ClientSize = New System.Drawing.Size(284, 157)
+        Me.Controls.Add(Me.Start)
         Me.Controls.Add(Me.ResXmlSelect)
         Me.Controls.Add(Me.ResXmlFile)
         Me.Controls.Add(Me.Label2)
@@ -161,8 +166,7 @@ Partial Class Form1
     Friend WithEvents ResXmlSelect As Button
     Friend WithEvents ResXmlFile As TextBox
     Friend WithEvents Label2 As Label
-    Friend WithEvents OpenFileDialog2 As OpenFileDialog
-    Friend WithEvents SaveFileDialog2 As SaveFileDialog
     Friend WithEvents Convert4MCPESC As RadioButton
     Friend WithEvents ConvertDirect As RadioButton
+    Friend WithEvents Start As Button
 End Class
