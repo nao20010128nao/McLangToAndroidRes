@@ -34,6 +34,9 @@ Partial Class Form1
         Me.Label2 = New System.Windows.Forms.Label()
         Me.OpenFileDialog2 = New System.Windows.Forms.OpenFileDialog()
         Me.SaveFileDialog2 = New System.Windows.Forms.SaveFileDialog()
+        Me.ConvertDirect = New System.Windows.Forms.RadioButton()
+        Me.Convert4MCPESC = New System.Windows.Forms.RadioButton()
+        Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
         'Label1
@@ -67,6 +70,8 @@ Partial Class Form1
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.Convert4MCPESC)
+        Me.GroupBox1.Controls.Add(Me.ConvertDirect)
         Me.GroupBox1.Location = New System.Drawing.Point(13, 33)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(259, 100)
@@ -103,6 +108,28 @@ Partial Class Form1
         '
         Me.OpenFileDialog2.FileName = "OpenFileDialog1"
         '
+        'ConvertDirect
+        '
+        Me.ConvertDirect.AutoSize = True
+        Me.ConvertDirect.Location = New System.Drawing.Point(6, 20)
+        Me.ConvertDirect.Name = "ConvertDirect"
+        Me.ConvertDirect.Size = New System.Drawing.Size(71, 16)
+        Me.ConvertDirect.TabIndex = 0
+        Me.ConvertDirect.TabStop = True
+        Me.ConvertDirect.Text = "直接変換"
+        Me.ConvertDirect.UseVisualStyleBackColor = True
+        '
+        'Convert4MCPESC
+        '
+        Me.Convert4MCPESC.AutoSize = True
+        Me.Convert4MCPESC.Location = New System.Drawing.Point(6, 42)
+        Me.Convert4MCPESC.Name = "Convert4MCPESC"
+        Me.Convert4MCPESC.Size = New System.Drawing.Size(126, 16)
+        Me.Convert4MCPESC.TabIndex = 1
+        Me.Convert4MCPESC.TabStop = True
+        Me.Convert4MCPESC.Text = "MCPE Skin Changer"
+        Me.Convert4MCPESC.UseVisualStyleBackColor = True
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
@@ -116,7 +143,9 @@ Partial Class Form1
         Me.Controls.Add(Me.LangFile)
         Me.Controls.Add(Me.Label1)
         Me.Name = "Form1"
-        Me.Text = "Form1"
+        Me.Text = "変換"
+        Me.GroupBox1.ResumeLayout(False)
+        Me.GroupBox1.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -134,4 +163,6 @@ Partial Class Form1
     Friend WithEvents Label2 As Label
     Friend WithEvents OpenFileDialog2 As OpenFileDialog
     Friend WithEvents SaveFileDialog2 As SaveFileDialog
+    Friend WithEvents Convert4MCPESC As RadioButton
+    Friend WithEvents ConvertDirect As RadioButton
 End Class
