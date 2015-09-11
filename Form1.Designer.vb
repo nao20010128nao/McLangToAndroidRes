@@ -29,11 +29,11 @@ Partial Class Form1
         Me.ResXmlSelector = New System.Windows.Forms.SaveFileDialog()
         Me.DataProcessor = New System.ComponentModel.BackgroundWorker()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.Convert4MCPESC = New System.Windows.Forms.RadioButton()
+        Me.ConvertDirect = New System.Windows.Forms.RadioButton()
         Me.ResXmlSelect = New System.Windows.Forms.Button()
         Me.ResXmlFile = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.ConvertDirect = New System.Windows.Forms.RadioButton()
-        Me.Convert4MCPESC = New System.Windows.Forms.RadioButton()
         Me.Start = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
@@ -85,6 +85,29 @@ Partial Class Form1
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "モード"
         '
+        'Convert4MCPESC
+        '
+        Me.Convert4MCPESC.AutoSize = True
+        Me.Convert4MCPESC.Location = New System.Drawing.Point(6, 42)
+        Me.Convert4MCPESC.Name = "Convert4MCPESC"
+        Me.Convert4MCPESC.Size = New System.Drawing.Size(126, 16)
+        Me.Convert4MCPESC.TabIndex = 1
+        Me.Convert4MCPESC.TabStop = True
+        Me.Convert4MCPESC.Text = "MCPE Skin Changer"
+        Me.Convert4MCPESC.UseVisualStyleBackColor = True
+        '
+        'ConvertDirect
+        '
+        Me.ConvertDirect.AutoSize = True
+        Me.ConvertDirect.Checked = True
+        Me.ConvertDirect.Location = New System.Drawing.Point(6, 20)
+        Me.ConvertDirect.Name = "ConvertDirect"
+        Me.ConvertDirect.Size = New System.Drawing.Size(71, 16)
+        Me.ConvertDirect.TabIndex = 0
+        Me.ConvertDirect.TabStop = True
+        Me.ConvertDirect.Text = "直接変換"
+        Me.ConvertDirect.UseVisualStyleBackColor = True
+        '
         'ResXmlSelect
         '
         Me.ResXmlSelect.Location = New System.Drawing.Point(239, 102)
@@ -109,29 +132,6 @@ Partial Class Form1
         Me.Label2.Size = New System.Drawing.Size(29, 12)
         Me.Label2.TabIndex = 4
         Me.Label2.Text = "XML:"
-        '
-        'ConvertDirect
-        '
-        Me.ConvertDirect.AutoSize = True
-        Me.ConvertDirect.Checked = True
-        Me.ConvertDirect.Location = New System.Drawing.Point(6, 20)
-        Me.ConvertDirect.Name = "ConvertDirect"
-        Me.ConvertDirect.Size = New System.Drawing.Size(71, 16)
-        Me.ConvertDirect.TabIndex = 0
-        Me.ConvertDirect.TabStop = True
-        Me.ConvertDirect.Text = "直接変換"
-        Me.ConvertDirect.UseVisualStyleBackColor = True
-        '
-        'Convert4MCPESC
-        '
-        Me.Convert4MCPESC.AutoSize = True
-        Me.Convert4MCPESC.Location = New System.Drawing.Point(6, 42)
-        Me.Convert4MCPESC.Name = "Convert4MCPESC"
-        Me.Convert4MCPESC.Size = New System.Drawing.Size(126, 16)
-        Me.Convert4MCPESC.TabIndex = 1
-        Me.Convert4MCPESC.TabStop = True
-        Me.Convert4MCPESC.Text = "MCPE Skin Changer"
-        Me.Convert4MCPESC.UseVisualStyleBackColor = True
         '
         'Start
         '
