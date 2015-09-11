@@ -67,10 +67,13 @@ Public Class Form1
         Dim direct As Boolean = Invoke(Function() ConvertDirect.Checked)
         Dim loadFrom As String = Invoke(Function() LangFile.Text)
         Dim saveTo As String = Invoke(Function() ResXmlFile.Text)
-        Dim xml = XDocument.Parse(<resources></resources>)
-        Using lang As New StreamReader(LangSelect.Text)
+        Dim xml = XDocument.Parse("<resources></resources>")
+        Using lang As New StreamReader(loadFrom)
             While Not lang.EndOfStream
                 Dim splited = lang.ReadLine.TrimEnd(vbTab, "#").Split("="c)
+                If splited.Length <> 2 Then
+                    Continue While
+                End If
                 If direct Then
                     Dim node = <string name=""></string>
                     node.@name = splited(0)
