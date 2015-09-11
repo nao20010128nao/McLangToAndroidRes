@@ -27,7 +27,7 @@ Partial Class Form1
         Me.LangSelect = New System.Windows.Forms.Button()
         Me.LangSelector = New System.Windows.Forms.OpenFileDialog()
         Me.ResXmlSelector = New System.Windows.Forms.SaveFileDialog()
-        Me.BackgroundWorker1 = New System.ComponentModel.BackgroundWorker()
+        Me.DataProcessor = New System.ComponentModel.BackgroundWorker()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.ResXmlSelect = New System.Windows.Forms.Button()
         Me.ResXmlFile = New System.Windows.Forms.TextBox()
@@ -71,6 +71,9 @@ Partial Class Form1
         '
         Me.ResXmlSelector.Filter = "XMLファイル|*.xml"
         '
+        'DataProcessor
+        '
+        '
         'GroupBox1
         '
         Me.GroupBox1.Controls.Add(Me.Convert4MCPESC)
@@ -110,6 +113,7 @@ Partial Class Form1
         'ConvertDirect
         '
         Me.ConvertDirect.AutoSize = True
+        Me.ConvertDirect.Checked = True
         Me.ConvertDirect.Location = New System.Drawing.Point(6, 20)
         Me.ConvertDirect.Name = "ConvertDirect"
         Me.ConvertDirect.Size = New System.Drawing.Size(71, 16)
@@ -168,7 +172,7 @@ Partial Class Form1
     Friend WithEvents LangSelect As Button
     Friend WithEvents LangSelector As OpenFileDialog
     Friend WithEvents ResXmlSelector As SaveFileDialog
-    Friend WithEvents BackgroundWorker1 As System.ComponentModel.BackgroundWorker
+    Friend WithEvents DataProcessor As System.ComponentModel.BackgroundWorker
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents ResXmlSelect As Button
     Friend WithEvents ResXmlFile As TextBox
