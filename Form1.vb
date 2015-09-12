@@ -77,7 +77,7 @@ Public Class Form1
                 If direct Then
                     Dim node = <string name=""></string>
                     node.@name = splited(0)
-                    node.Value = splited(1)
+                    node.Value = EscapeForAndroid(splited(1))
                     xml.Root.Add(node)
                 Else
                     If Not mcpescMap.ContainsKey(splited(0)) Then
@@ -86,26 +86,42 @@ Public Class Form1
                     For Each s In mcpescMap(splited(0))
                         Dim tmp = <string name=""></string>
                         tmp.@name = s
-                        tmp.Value = splited(1)
+                        tmp.Value = EscapeForAndroid(splited(1))
                         xml.Root.Add(tmp)
                     Next
                 End If
             End While
         End Using
-        If Not direct Then
-            xml.Root.Add(<!--These resources cannot be converted by this program because they're not in the game lang file.-->)
-            xml.Root.Add(<!--Please translate them yourself.-->)
-            For Each kvp In mcpescExtractIssues
-                Dim tmp = <string name=""></string>
-                tmp.@name = kvp.Key
-                tmp.Value = kvp.Value
-                xml.Root.Add(tmp)
-            Next
-        End If
+        'If Not direct Then
+        '    xml.Root.Add(<!--These resources cannot be converted by this program because they're not in the game lang file.-->)
+        '    xml.Root.Add(<!--Please translate them yourself.-->)
+        '    For Each kvp In mcpescExtractIssues
+        '        Dim tmp = <string name=""></string>
+        '        tmp.@name = kvp.Key
+        '        tmp.Value = kvp.Value
+        '        xml.Root.Add(tmp)
+        '    Next
+        'End If
         xml.Save(saveTo)
+        Invoke(Sub() Enabled = True)
     End Sub
 
     Private Sub Start_Click(sender As Object, e As EventArgs) Handles Start.Click
         DataProcessor.RunWorkerAsync()
+        Enabled = False
     End Sub
+    Private Function EscapeForAndroid(s As String) As String
+        Dim sb As New System.Text.StringBuilder(CType(s.Length * 1.1, Integer))
+        For Each c In s
+            Select Case c
+                Case """"c
+                    sb.Append("\").Append(c)
+                Case "'"c
+                    sb.Append("\").Append(c)
+                Case Else
+                    sb.Append(c)
+            End Select
+        Next
+        Return sb.ToString
+    End Function
 End Class
